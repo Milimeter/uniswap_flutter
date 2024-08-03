@@ -9,4 +9,5 @@ class UniswapSwapManager {
     required this.poolAddress,
     required this.poolChain,
   });
+  
 }

@@ -7,7 +7,8 @@ class UniswapFlutter {
   UniswapFlutter({UniswapSwapManager? swapManager})
       : swapManager = swapManager ??
             UniswapSwapManager(
-              poolAddress: 'default_pool_address',
+              poolAddress:
+                  '0x74F7A360eB36A46B675eA932ea07094A3ace441F', // USDT / GNB pool address
               poolChain: PoolChain.bsc,
             );
 }
