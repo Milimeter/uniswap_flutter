@@ -2,7 +2,7 @@ import '../enum/system.dart';
 import 'crypto_data.dart';
 import 'network_models.dart';
 
-class SupportedCoin {
+class Asset {
   String id;
   String symbol;
   String name;
@@ -17,7 +17,7 @@ class SupportedCoin {
   bool? isImplementedContract = false;
   String? implementationContractAddress;
 
-  SupportedCoin({
+  Asset({
     required this.id,
     required this.symbol,
     required this.name,

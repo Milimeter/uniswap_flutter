@@ -5,7 +5,8 @@ import 'dart:developer';
 import '../constants/rpc_urls.dart';
 import '../constants/scan_api.dart';
 import '../enum/system.dart';
-import '../functions/get_pool_abi.dart';
+import '../functions/pool_info.dart';
+import '../functions/swap_info.dart';
 import '../services/api_client.dart';
 
 class UniswapSwapManager {
@@ -18,6 +19,8 @@ class UniswapSwapManager {
   String? rpcUrl;
   late final ApiClient apiClient;
   late String poolAbi;
+  final PoolInfo _poolInfo = PoolInfo();
+  final SwapInfo _swapInfo = SwapInfo();
 
   // Constructor with required parameters
   UniswapSwapManager({
@@ -67,7 +70,7 @@ class UniswapSwapManager {
     }
 
     try {
-      poolAbi = await getPoolAbi(
+      poolAbi = await _poolInfo.getPoolAbi(
         apiClient: apiClient,
         poolAddress: poolAddress,
         apiKey: apiKey,
